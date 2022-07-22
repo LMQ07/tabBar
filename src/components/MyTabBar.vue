@@ -38,7 +38,13 @@ export default {
   methods: {
     change(index) {
       this.currentIndex = index;
-      this.$emit("change", this.list[index].componentName);
+      if (index == 0) {
+        this.$router.push("/goodlist");
+      } else if (index == 1) {
+        this.$router.push("/goodsearch");
+      } else {
+        this.$router.push("/userinfo");
+      }
     },
   },
 };
